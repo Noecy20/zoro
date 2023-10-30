@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+
+{%block centre%}
+        <div class="deuxieme5">
+            <div class="tble5">
+                <h3>Ajouter un nouveau magasin</h3>
+                <form action="" class="form5">
+                    <label for="">Nom : </label>
+                    <input type="text" class="input5" >
+                    <label for="">Adresse :</label>
+                    <input type="text" class="input5" >
+                    <label for="">Téléphone :</label>
+                    <input type="tel" class="input5" >
+                    <label for="">E-mail :</label>
+                    <input type="text" class="input5">
+                </form>
+            </div> 
+            <div class="btn5">
+                <button class="red"><a href="{{url_for('magasin')}}">Retour</a>
+                </button>
+                <button class="vert"><a href="{{url_for('succès')}}">Valider</a>
+                </button>
+            </div>
+           
+        </div>
+                    
+
+{%endblock centre%}
