@@ -1,0 +1,49 @@
+{%extends 'base.html'%}
+
+{%block centre%}
+    <div class="deuxieme">
+        <div class="btn4">
+            <button><a href="{{url_for('formProd')}}">Ajouter</a>
+            </button>
+        </div>
+        {% with messages = get_flashed_messages(with_categories=true)  %}
+            {% if messages %}
+                {% for category,message in messages %}
+                     <div class="success">
+                         {{ message }}
+                    </div> 
+                {%endfor %}
+            {%endif %}
+        {%endwith %}
+        <div class="tble">
+            <table>
+                <caption><h4><strong>Liste des Produits</strong></h4></caption>
+                <tr>
+                <th>id</th>
+                <th>Nom</th>
+                <th>Categorie du produit</th>
+                <th>prix</th>
+                <th>Quantité</th>
+                <th>Action</th>
+               </tr>
+               {% for row in listProd %}
+               <tr class="un">
+                <td><strong>{{row[0]}}</strong></td>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+                <td>{{row[3]}}</td>
+                <td>{{row[4]}}</td>
+                <td class="activer"> 
+                    <button class="boutonM1"><a href="{{url_for('Modifprod',id_produit=row.id_produit)}}">Modifier</a>
+                    </button>
+                    <button class="boutonS2" onclick="return confirm('Etes vous sure de vouloir supprimer ?')"><a href="{{url_for('Supprod',id_produit=row.id_produit)}}">Supprimer</a>
+                    </button>
+                </td>
+               </tr>
+               {%endfor%}
+            </table>
+        </div> 
+    </div>  
+</section>
+{%endblock centre%}
+

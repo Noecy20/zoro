@@ -1,0 +1,29 @@
+{%extends 'base.html'%}
+
+{%block centre%}
+        <div class="deuxieme5">
+            <div class="tble5">
+                <h3>Ajouter un nouveau Produit</h3>
+                <form action="{{url_for('formProd')}}" class="form5" method="POST">
+                    <label for="">Nom : </label>
+                    <input type="text" class="input5" name="nomProd">
+                    <label for="">Categorie du produit :</label>
+                    <input type="text" class="input5" name="categorie">
+                    <label for="">prix :</label>
+                    <input type="tel" class="input5" name="prix">
+                    <label for="">Quantité :</label>
+                    <input type="text" class="input5"name="quantite">
+                <!-- <button  class="vert">Valider</button> -->
+                <div class="btn5">
+                    <button class="red"><a href="{{url_for('produit')}}">Retour</a>
+                    </button>
+                    <button class="vert" type="submit">Valider</button>
+                </div>
+                </form>
+            </div> 
+            <div class="btn5"></div>
+           
+        </div>
+                    
+
+{%endblock centre%}

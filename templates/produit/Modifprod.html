@@ -1,0 +1,30 @@
+{%extends 'base.html'%}
+
+{%block centre%}
+        <div class="deuxieme5">
+            <div class="tble5">
+                <h3>Modifier un  Produit</h3>
+                <form action="{{url_for('Modifprod',id_produit=datas.id_produit)}}" class="form5" method="POST">
+                    <label for="">Nom : </label>
+                    <input type="text" class="input5" name="nomProd" value="{{datas.nomProd}}">
+                    <label for="">Categorie du produit :</label>
+                    <input type="text" class="input5" name="categorie" value="{{datas.categorie}}">
+                    <label for="">prix :</label>
+                    <input type="tel" class="input5" name="prix" value="{{datas.prix}}">
+                    <label for="">Quantité :</label>
+                    <input type="text" class="input5"name="quantite"value="{{datas.quantite}}">
+                    <div class="btn5">
+                        <button class="red"><a href="{{url_for('produit')}}">Retour</a>
+                        </button>
+                        <button class="vert" type="submit">Valider</button>
+                    </div>
+                </form>
+            </div> 
+            <div class="btn5">
+               
+            </div>
+           
+        </div>
+                    
+
+{%endblock centre%}
