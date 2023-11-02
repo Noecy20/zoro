@@ -10,9 +10,11 @@
 <body>
     {%include './partial/header.html'%}
     <section class="page3">
-        {%include './partial/sidebar.html'%}
-        {%block centre%}
-        {%endblock centre%}
+        {% include './partial/sidebar.html' %}
+
+        {% block centre %}
+        {% endblock %}
+        
     </section>
    
 

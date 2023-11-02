@@ -1,28 +1,25 @@
-{%extends 'base.html'%}
+{%extends '/base.html'%}
 
-{%block centre%}
+{% block centre %}
+
         <div class="deuxieme5">
             <div class="tble5">
                 <h3>Ajouter un nouveau magasin</h3>
-                <form action="" class="form5">
+                <form class="form5" method="POST">
                     <label for="">Nom : </label>
-                    <input type="text" class="input5" >
+                    <input type="text" class="input5" name="nom_magasin" value="{{data[1]}}" required>
                     <label for="">Adresse :</label>
-                    <input type="text" class="input5" >
+                    <input type="text" class="input5"  name="adresse" value="{{data[2]}}" required>
                     <label for="">Téléphone :</label>
-                    <input type="tel" class="input5" >
+                    <input type="tel" class="input5" name="tel" value="{{data[3]}}" required>
                     <label for="">E-mail :</label>
-                    <input type="text" class="input5">
+                    <input type="text" class="input5" name="email" value="{{data[4]}}" required>
+                    <div class="btn5">
+                        <button class="red"><a href="{{url_for('magasin')}}">Retour</a>
+                        </button>
+                        <button class="vert" type="submit">Valider</button>
+                    </div>
                 </form>
             </div> 
-            <div class="btn5">
-                <button class="red"><a href="{{url_for('magasin')}}">Retour</a>
-                </button>
-                <button class="vert"><a href="{{url_for('succès')}}">Valider</a>
-                </button>
-            </div>
-           
-        </div>
-                    
-
-{%endblock centre%}
+        </div>           
+{% endblock %}

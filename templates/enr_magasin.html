@@ -1,5 +1,13 @@
 {%extends 'base.html'%}
 
+{% block reload %}
+<script>
+    setTimeout(function(){
+        window.location.reload();
+    }, 8000)
+</script>
+{% endblock %}
+
 {%block centre%}
 
         <div class="deuxieme">
@@ -15,7 +23,7 @@
              <!-- la derniere div pour le tableau -->
             <div class="tble">
                 <table class="table">
-                    <!-- <caption><h4><strong>Liste des Magasins</strong></h4></caption> -->
+                    <caption><h4><strong>Liste des Magasins</strong></h4></caption> 
                    <tr>
                     <th>id</th>
                     <th>Nom</th>
@@ -24,112 +32,25 @@
                     <th>Mail</th>
                     <th>Action</th>
                    </tr>
-                   <tr class="un">
-                    <td><strong>1</strong></td>
-                    <td>Magasin1</td>
-                    <td>Adresse1</td>
-                    <td>Téléphone1</td>
-                    <td>Mail1</td>
+
+                   {% for row in data %}
+
+                   <tr>
+                    <td> {{ row[0] }} </td>
+                    <td> {{ row[1] }} </td>
+                    <td> {{ row[2] }} </td>
+                    <td> {{ row[3] }} </td>
+                    <td> {{ row[4] }} </td>
+
                     <td class="activer"> 
-                        <button class="boutonM1"><a href="{{url_for('modifier')}}">Modifier</a>
-                        </button>
-                        <button class="boutonS2"><a href="{{url_for('supprimer')}}">Supprimer</a>
-                        </button>
+                        <button class="boutonM1"><a href="{{url_for('edit', item_id=row[0]) }}">Modifier</a></button>
+                        <button class="boutonS2"><a href="{{url_for('delete'), item_id=row[0]) }}">Supprimer</a></button>
                     </td>
                    </tr>
-                   <tr class="deux">
-                    <td>2</td>
-                    <td>Magasin2</td>
-                    <td>Adresse2</td>
-                    <td>Téléphone2</td>
-                    <td>Mail2</td>
-                    <td class="activer"> 
-                        <button class="boutonM1"><a href="{{url_for('modifier')}}">Modifier</a>
-                        </button>
-                        <button class="boutonS2"><a href="{{url_for('supprimer')}}">Supprimer</a>
-                        </button>
-                    </td>
-                   </tr>
-                   <tr class="un">
-                    <td>3</td>
-                    <td>Magasin3</td>
-                    <td>Adresse3</td>
-                    <td>Téléphone3</td>
-                    <td>Mail3</td>
-                    <td class="activer"> 
-                        <button class="boutonM1"><a href="{{url_for('modifier')}}">Modifier</a>
-                        </button>
-                        <button class="boutonS2"><a href="{{url_for('supprimer')}}">Supprimer</a>
-                        </button>
-                    </td>
-                   </tr>
-                   <tr class="deux">
-                    <td>4</td>
-                    <td>Magasin4</td>
-                    <td>Adresse4</td>
-                    <td>Téléphone4</td>
-                    <td>Mail4</td>
-                    <td class="activer"> 
-                        <button class="boutonM1"><a href="{{url_for('modifier')}}">Modifier</a>
-                        </button>
-                        <button class="boutonS2"><a href="{{url_for('supprimer')}}">Supprimer</a>
-                        </button>
-                    </td>
-                   </tr>
-                   <tr class="un">
-                    <td>5</td>
-                    <td>Magasin5</td>
-                    <td>Adresse5</td>
-                    <td>Téléphone5</td>
-                    <td>Mail5</td>
-                    <td class="activer"> 
-                        <button class="boutonM1"><a href="{{url_for('modifier')}}">Modifier</a>
-                        </button>
-                        <button class="boutonS2"><a href="{{url_for('supprimer')}}">Supprimer</a>
-                        </button>
-                    </td>
-                   </tr>
-                   <tr class="deux">
-                    <td>6</td>
-                    <td>Magasin6</td>
-                    <td>Adresse6</td>
-                    <td>Téléphone6</td>
-                    <td>Mail6</td>
-                    <td class="activer"> 
-                        <button class="boutonM1"><a href="{{url_for('modifier')}}">Modifier</a>
-                        </button>
-                        <button class="boutonS2"><a href="{{url_for('supprimer')}}">Supprimer</a>
-                        </button>
-                    </td>
-                   </tr>
-                   <tr class="un">
-                    <td>7</td>
-                    <td>Magasin7</td>
-                    <td>Adresse7</td>
-                    <td>Téléphone7</td>
-                    <td>Mail7</td>
-                    <td class="activer"> 
-                        <button class="boutonM1"><a href="{{url_for('modifier')}}">Modifier</a>
-                        </button>
-                        <button class="boutonS2"><a href="{{url_for('supprimer')}}">Supprimer</a>
-                        </button>
-                    </td>
-                   </tr>
-                   <tr class="deux couleur">
-                    <td>8</td>
-                    <td>Nouveau</td>
-                    <td>Nouveau</td>
-                    <td>Nouveau</td>
-                    <td>Nouveau</td>
-                    <td class="activer"> 
-                        <button class="boutonM1"><a href="{{url_for('modifier')}}">Modifier</a>
-                        </button>
-                        <button class="boutonS2"><a href="{{url_for('supprimer')}}">Supprimer</a>
-                        </button>
-                    </td>
-                   </tr>
+
+                   {% endfor %}
                 </table>
             </div> 
         </div>        
-    {%endblock centre%}
+{%endblock centre%} 
 

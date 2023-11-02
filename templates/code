@@ -1,0 +1,100 @@
+
+<!-- {% block reload %}
+<script>
+  setTimeout(function(){
+    window.location.reload();
+  }, 8000);
+</script>
+{% endblock %}
+
+{% block centre %}
+<div class="deuxieme">
+                <div class="btn"><a href="{{ url_for('form') }}">ajouter</a></div>
+                <div class="tble">
+                        <table border="2">
+                            <caption><h4><strong>Liste des Magasins</strong></h4></caption>
+                          <tr>
+                            <th>id</th>
+                            <th>Nom</th>
+                            <th>Adresse</th>
+                            <th>Téléphone</th>
+                            <th>Mail</th>
+                            <th>Action</th>
+                          </tr>
+                          
+                          </tr>
+                          {% for row in data %}
+                          <tr>
+                            <td> {{ row[0] }} </td>
+                            <td> {{ row[1] }} </td>
+                            <td> {{ row[2] }} </td>
+                            <td> {{ row[3] }} </td>
+                            <td> {{ row[4] }} </td>
+                            <td class="activer"> 
+                                <button class="boutonM1"><a href="{{url_for('edit', item_id=row[0])}}">Modifier</a>
+                                </button>
+                                <button class="boutonS2"><a href="{{url_for('delete', item_id=row[0]) }}">Supprimer</a>
+                                </button>
+                            </td>
+                          </tr>
+                          {% endfor %}
+                            
+                        </table>
+                </div>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+<!-- {% block reload %}
+<script>
+  setTimeout(function(){
+    window.location.reload();
+  }, 8000);
+</script>
+{% endblock %}
+
+{% block centre %}
+<div class="deuxieme">
+    <div class="btn"><a href="{{ url_for('form') }}">ajouter</a></div>
+    <div class="tble">
+        <table border="2">
+            <caption><h4><strong>Liste des Magasins</strong></h4></caption>
+            <tr>
+                <th>id</th>
+                <th>Nom</th>
+                <th>Adresse</th>
+                <th>Téléphone</th>
+                <th>Mail</th>
+                <th>Action</th>
+            </tr>
+                          
+            </tr>
+            {% for row in data %}
+            <tr>
+                <td> {{ row[0] }} </td>
+                <td> {{ row[1] }} </td>
+                 <td> {{ row[2] }} </td>
+                <td> {{ row[3] }} </td>
+                <td> {{ row[4] }} </td>
+                            
+                <td class="activer"> 
+                    <button class="boutonM1"><a href="{{url_for('edit', item_id=row[0])}}">Modifier</a>
+                    </button>
+                    <button class="boutonS2"><a href="{{url_for('delete', item_id=row[0]) }}">Supprimer</a>
+                    </button>
+                </td>
+            </tr>
+            {% endfor %}
+                            
+        </table>
+                    
+    </div>
+            
+</div> -->
